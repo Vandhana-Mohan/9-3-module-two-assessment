@@ -1,13 +1,17 @@
 body{
     background-color: lavender;
     font-family: monospace;
-    margin:1%;
+    border:1px solid #000000;
+    font-size: 15px;
+    color: #333;
+    margin: 0;
+    padding: 0;
 }
 
 header{
     background-color: skyblue;
     width: 75%;
-    margin-top: -0.90%;
+    margin-top: 0.1%;
     margin-left: 12%;
     margin-bottom: 2%;
     display: flex;
@@ -34,3 +38,65 @@ header h1{
 .main__studio{
     margin-left: 12%;
 }
+
+.main__studio h2{
+    font-weight: bolder;
+    font-size: 24px;
+}
+
+
+
+
+
+
+
+footer {
+    background: #040f16;
+    color: #ececec;
+    padding: 3px 35% 3px;
+    display: grid;
+    justify-content: center;
+    letter-spacing: 1.2px;
+  }
+  
+  footer h4 {
+    border-bottom: 1px solid #de6b48;
+    margin: 0;
+    max-width: 250px;
+    padding-bottom: 5px;
+  }
+  
+  footer ul {
+    color: #de6b48;
+    padding-left: 1rem;
+    display: flex;
+    margin:0px;
+    padding:0px;
+  }
+  
+  footer ul li {
+    margin: 1rem 0;
+    list-style-type: none;
+    flex: 1;
+    padding: 0px;
+    margin-right: -0.5em;
+  }
+  
+  footer a {
+    color: #de6b48;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  footer a:hover {
+    color: #ececec;
+    box-shadow: #ececec;
+  }
+
+  footer p{
+    text-align: center;
+    margin-top: 0%;
+    margin-bottom: 0%;
+ }
+  

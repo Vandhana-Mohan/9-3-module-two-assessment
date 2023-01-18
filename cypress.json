@@ -4,6 +4,6 @@
   },
   "env": {
     "URL": "http://localhost:3000",
-    "API": "https://ghibliapi.herokuapp.com"
+    "API": "https://resource-ghibli-api.onrender.com"
   }
 }
