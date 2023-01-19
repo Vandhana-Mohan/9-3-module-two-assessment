@@ -74,17 +74,24 @@ reset__Review.addEventListener("click", (event) => {
     event.preventDefault()
     user__Reviews.innerHTML = "";
 });
+ 
 
 show__People.addEventListener("click", (event) => {
-    event.preventDefault()
-    fetch (PEOPLE_URL)
-        .then((response)=>response.json())
-        .then((data)=>{
-            console.log(data)
-            const list__people = document.createElement("li")
-
-            list__people.textContent = data[0].name
-            console.log("ll", list__people.textContent)
-            ol__People.append(list__people)
-    })
-})
+    event.preventDefault();
+    if (selectedMovie === undefined) {
+      alert("Please select a movie first");
+      return;
+    }
+    fetch(PEOPLE_URL)
+      .then((response) => response.json())
+      .then((people) => {
+        console.log(people)
+        ol__People.innerHTML = "";
+        people.forEach((person) => {
+          const list__people = document.createElement("li")
+          list__people.textContent = person.name;
+          ol__People.append(list__people);
+        });
+    });
+});
+  
