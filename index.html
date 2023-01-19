@@ -10,10 +10,11 @@
 </head>
 <body>
     <header>
+        <h1>Ghibli Review App</h1>
         <div class = "image__container">
             <img src="./images/ghibli-logo.png" alt="Ghibli logo">
         </div>
-        <h1>Ghibli Review App</h1>
+        
     </header>
     <main class="main__studio">
         <section>
@@ -23,16 +24,20 @@
             </select>
         </section>
         <section>
+            <h2>Movie details</h2>
+            <div id = "display-info">
+                <h3 id = "movie__heading"></h3>
+                <p id="movie__release"></p>
+                <p id="movie__description"></p>
+            </div>
+        </section>
+        <section>
             <h2>Add a review</h2>
             <form>
                 <label for="review">Your review:</label><br>
                 <input type="text" name="" id="review">
                 <input type="submit" value="Submit">
             </form>
-        </section>
-        <section>
-            <h2>Movie details</h2>
-            <div id = "display-info"></div>
         </section>
         <section>
             <h2>People</h2>
@@ -45,7 +50,7 @@
             <button id="reset-reviews">Reset Reviews</button>
         </section>
     </main>
-    
+     
     <footer>
         <h4>Social Media</h4>
         <nav>
