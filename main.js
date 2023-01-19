@@ -61,7 +61,6 @@ submit__review.addEventListener("click", (event) => {
 });
 
 
-
 function displayUserReviews(movie){
     const list__Reviews = document.createElement("li")
     list__Reviews.innerHTML = `<strong>${movie.title}:</strong> ${input__Review.value}`;
@@ -78,20 +77,18 @@ reset__Review.addEventListener("click", (event) => {
 
 show__People.addEventListener("click", (event) => {
     event.preventDefault();
-    if (selectedMovie === undefined) {
+    if (selectedMovie === "") {
       alert("Please select a movie first");
       return;
     }
     fetch(PEOPLE_URL)
       .then((response) => response.json())
-      .then((people) => {
-        console.log(people)
-        ol__People.innerHTML = "";
-        people.forEach((person) => {
+      .then((data) => {
+        console.log(data)
+        data.forEach((person) => {
           const list__people = document.createElement("li")
           list__people.textContent = person.name;
           ol__People.append(list__people);
         });
     });
 });
-  
