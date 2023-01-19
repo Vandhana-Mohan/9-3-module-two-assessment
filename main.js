@@ -16,9 +16,9 @@
  const reset__Review = document.querySelector("#reset-reviews")
  const show__People = document.querySelector("#show-people")
  const ol__People = document.querySelector("#ol__people")
-
  let selectedMovie;
 
+ // fetch the API
  function run() {
  // Add code you want to run on page load here
     fetch (FILMS_URL)
@@ -27,57 +27,63 @@
             console.log(results)
             generateMovieTitles(results)
     })
-}
-setTimeout(run, 1000);
+ }
+ setTimeout(run, 1000);
 
-function generateMovieTitles(results){
+ // populate the select option with movie titles on page load
+ function generateMovieTitles(results){
     results.forEach((movie) => {
         const option__title = document.createElement("option");
         option__title.value = movie.id;
         option__title.textContent = movie.title
         movieTitles.append(option__title)
     });
+    // if movie title changes call this function
     movieTitles.addEventListener("change", (event) => { 
         updateMovieInfo(results, event)
     });
-}
+ }
 
-function updateMovieInfo(results, event) {
+ // if movie is selected, display the movie title, release date and description
+ function updateMovieInfo(results, event) {
     event.preventDefault();
     const selectedId = event.target.value;
     selectedMovie = results.find((movie) => movie.id === selectedId);
     display__movieHeading.textContent = selectedMovie.title;
     display__movieReleaseYear.textContent = selectedMovie.release_date;
     display__movieDescription.textContent = selectedMovie.description;
-}
+ }
 
-submit__review.addEventListener("click", (event) => {
+ // on clicking submit, if movie not selected, alert else display review
+ submit__review.addEventListener("click", (event) => {
     event.preventDefault();
-    if (selectedMovie === undefined) {
+    if (movieTitles.value === "") {
         alert("Please select a movie first");
-        return;
+    } else{
+        displayUserReviews(selectedMovie);
     }
-    displayUserReviews(selectedMovie);
-});
+ });
 
-
-function displayUserReviews(movie){
+ // display user review
+ function displayUserReviews(movie){
     const list__Reviews = document.createElement("li")
     list__Reviews.innerHTML = `<strong>${movie.title}:</strong> ${input__Review.value}`;
     user__Reviews.append(list__Reviews)
-    input__Review.value = ""
-    movieTitles.selectedIndex = 0;
-}
+    input__Review.value = "" // reset the text for review
+    movieTitles.selectedIndex = 0; // reset the drop down
+ }
 
-reset__Review.addEventListener("click", (event) => {
+ // on clicking reset, review should clear
+ reset__Review.addEventListener("click", (event) => {
     event.preventDefault()
     user__Reviews.innerHTML = "";
-});
+ });
  
-
-show__People.addEventListener("click", (event) => {
+ 
+// on clicking show, if movie empty alert else fetch people URL and add to OL
+ show__People.addEventListener("click", (event) => {
     event.preventDefault();
-    if (selectedMovie === "") {
+    if (movieTitles.value === "") {
       alert("Please select a movie first");
       return;
     }
@@ -91,4 +97,4 @@ show__People.addEventListener("click", (event) => {
           ol__People.append(list__people);
         });
     });
-});
+ });

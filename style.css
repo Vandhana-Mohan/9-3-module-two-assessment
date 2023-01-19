@@ -1,8 +1,7 @@
 body{
     background-color: lavender;
     font-family: monospace;
-    border:1px solid #000000;
-    font-size: 15px;
+    font-size: 16px;
     color: black;
     margin: 0;
     padding: 0;
@@ -44,6 +43,10 @@ header h1{
     font-size: 24px;
 }
 
+#reset-reviews{
+  margin-bottom: 65px;
+}
+
 @media (max-width:500px){
     #reviews{
         display: none;
@@ -66,26 +69,10 @@ footer {
     padding-bottom: 5px;
   }
   
-  footer ul {
-    color: #de6b48;
-    padding-left: 1rem;
-    display: flex;
-    margin:0px;
-    padding:0px;
-  }
-  
-  footer ul li {
-    margin: 1rem 0;
-    list-style-type: none;
-    flex: 1;
-    padding: 0px;
-    margin-right: -0.5em;
-  }
-  
   footer a {
     color: #de6b48;
     text-decoration: none;
-    margin: 0px;
+    margin: 10px;
     padding: 0px;
   }
   
@@ -97,5 +84,5 @@ footer {
   footer p{
     text-align: center;
     margin-top: 0%;
-    margin-bottom: 0%;
+    margin-bottom: 3%;
  }
