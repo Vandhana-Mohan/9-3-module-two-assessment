@@ -6,8 +6,8 @@
  const BASE_URL = "https://resource-ghibli-api.onrender.com";
  const PEOPLE_URL = `${BASE_URL}/people`
  const FILMS_URL = `${BASE_URL}/films`
+
  const movieTitles = document.querySelector("#titles")
- const display__movieInfo = document.querySelector("#display-info")
  const display__movieHeading = document.querySelector("#movie__heading")
  const display__movieReleaseYear = document.querySelector("#movie__release")           
  const display__movieDescription = document.querySelector("#movie__description")              
@@ -17,6 +17,7 @@
  const reset__Review = document.querySelector("#reset-reviews")
  const show__People = document.querySelector("#show-people")
  const ol__People = document.querySelector("#ol__people")
+
  let selectedMovie;
 
  function run() {
@@ -53,16 +54,18 @@ function updateMovieInfo(results, event) {
 
 submit__review.addEventListener("click", (event) => {
     event.preventDefault();
-    if (!selectedMovie) {
+    if (selectedMovie === "") {
         alert("Please select a movie first");
-        return
+        return;
     }
     displayUserReviews(selectedMovie);
 });
 
 function displayUserReviews(movie){
     const list__Reviews = document.createElement("li")
-    list__Reviews.innerHTML = `<strong>${movie.title}:</strong> ${input__Review.value}`;
+    if(movie){
+        list__Reviews.innerHTML = `<strong>${movie.title}:</strong> ${input__Review.value}`;
+    }
     user__Reviews.append(list__Reviews)
     input__Review.value = ""
     movieTitles.selectedIndex = 0;
@@ -70,10 +73,6 @@ function displayUserReviews(movie){
 
 reset__Review.addEventListener("click", (event) => {
     event.preventDefault()
-    const liElement = user__Reviews.querySelectorAll("li");
-    for (let i = 0; i < liElement.length; i++) {
-        user__Reviews.remove(liElement[i]);
-    }
 });
 
 show__People.addEventListener("click", (event) => {
