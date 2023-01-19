@@ -6,12 +6,11 @@
  const BASE_URL = "https://resource-ghibli-api.onrender.com";
  const PEOPLE_URL = `${BASE_URL}/people`
  const FILMS_URL = `${BASE_URL}/films`
-
  const movieTitles = document.querySelector("#titles")
  const display__movieHeading = document.querySelector("#movie__heading")
  const display__movieReleaseYear = document.querySelector("#movie__release")           
  const display__movieDescription = document.querySelector("#movie__description")              
- const submit__review = document.querySelector("#submit")
+ const submit__review = document.querySelector("#submit__review")
  const user__Reviews = document.querySelector("#ulUser__Reviews")
  const input__Review = document.querySelector("#review")
  const reset__Review = document.querySelector("#reset-reviews")
@@ -40,7 +39,7 @@ function generateMovieTitles(results){
     });
     movieTitles.addEventListener("change", (event) => { 
         updateMovieInfo(results, event)
-     });
+    });
 }
 
 function updateMovieInfo(results, event) {
@@ -54,18 +53,18 @@ function updateMovieInfo(results, event) {
 
 submit__review.addEventListener("click", (event) => {
     event.preventDefault();
-    if (selectedMovie === "") {
+    if (selectedMovie === undefined) {
         alert("Please select a movie first");
         return;
     }
     displayUserReviews(selectedMovie);
 });
 
+
+
 function displayUserReviews(movie){
     const list__Reviews = document.createElement("li")
-    if(movie){
-        list__Reviews.innerHTML = `<strong>${movie.title}:</strong> ${input__Review.value}`;
-    }
+    list__Reviews.innerHTML = `<strong>${movie.title}:</strong> ${input__Review.value}`;
     user__Reviews.append(list__Reviews)
     input__Review.value = ""
     movieTitles.selectedIndex = 0;
@@ -73,6 +72,7 @@ function displayUserReviews(movie){
 
 reset__Review.addEventListener("click", (event) => {
     event.preventDefault()
+    user__Reviews.innerHTML = "";
 });
 
 show__People.addEventListener("click", (event) => {
@@ -83,7 +83,8 @@ show__People.addEventListener("click", (event) => {
             console.log(data)
             const list__people = document.createElement("li")
 
-            list__people.textContent = data.name
+            list__people.textContent = data[0].name
+            console.log("ll", list__people.textContent)
             ol__People.append(list__people)
     })
 })
