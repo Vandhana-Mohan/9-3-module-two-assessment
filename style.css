@@ -42,11 +42,15 @@ header h1{
 .main__studio h2{
     font-weight: bolder;
     font-size: 24px;
+}
 
+#movie__description{
+  text-align: justify;
+  margin-right:2%;
 }
 
 #reset-reviews{
-  margin-bottom: 18px;
+  margin-bottom: 3px;
 }
 
 
@@ -56,8 +60,8 @@ label{
 }
 
 #titles{
-width:20%;
-padding:0.50%;
+  width:20%;
+  padding:0.50%;
 }
 
 #review{
@@ -92,6 +96,7 @@ footer {
     display: grid;
     justify-content: center;
     letter-spacing: 1.2px;
+    font-size: 16px;
   }
   
   footer h4 {
@@ -110,8 +115,10 @@ footer {
   }
   
   footer a:hover {
-    color: #ececec;
-    box-shadow: #ececec;
+    background-color: lightgreen;
+    box-shadow: 2px 2px 5px #ececec;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in;
   }
 
   footer p{
