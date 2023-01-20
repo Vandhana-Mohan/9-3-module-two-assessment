@@ -48,8 +48,11 @@ To submit the assessment, you should do the following:
 - [ ] Create a pull request against the original repository.
 - In your pull request description, add screenshots of the following:
   - [ ] Your landing page, when a user first arrives.
+   ![landing page](images/Screen Shot 2023-01-20 at 10.23.25 AM.png)
   - [ ] Your landing page, after choosing a dropdown menu.
+   ![landing page](images/Screen Shot 2023-01-20 at 10.23.47 AM.png)
   - [ ] Your landing page, after submitting two reviews.
+   ![landing page](images/Screen Shot 2023-01-20 at 10.32.03 AM.png) 
 - [ ] Submit a link to your pull request on Canvas.
 
 ## Assessment Details
