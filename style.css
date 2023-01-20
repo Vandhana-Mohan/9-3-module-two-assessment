@@ -5,6 +5,7 @@ body{
     color: black;
     margin: 0;
     padding: 0;
+    letter-spacing: 0.75px;
 }
 
 header{
@@ -41,16 +42,47 @@ header h1{
 .main__studio h2{
     font-weight: bolder;
     font-size: 24px;
+
 }
 
 #reset-reviews{
-  margin-bottom: 65px;
+  margin-bottom: 18px;
 }
 
-@media (max-width:500px){
-    #reviews{
-        display: none;
-    }
+
+label{
+  font-size: 16px;
+  font-weight: 300;
+}
+
+#titles{
+width:20%;
+padding:0.50%;
+}
+
+#review{
+  width:20%;
+  padding:0.50%;
+
+}
+
+section{
+  margin-bottom: 1%;
+}
+
+#submit__review, #reset-reviews, #show-people{
+  padding:2px;
+  font-size:16px;
+  width:15%;
+  padding-bottom: 6px;
+  padding-top:6px;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 500px){
+  #reviews{
+      display: none;
+  }
 }
 
 footer {
@@ -67,12 +99,13 @@ footer {
     margin: 0;
     max-width: 250px;
     padding-bottom: 5px;
+    margin-bottom: 3%;
   }
   
   footer a {
     color: #de6b48;
     text-decoration: none;
-    margin: 10px;
+    margin: 20px;
     padding: 0px;
   }
   
@@ -83,6 +116,6 @@ footer {
 
   footer p{
     text-align: center;
-    margin-top: 0%;
+    margin-top: 2%;
     margin-bottom: 3%;
  }
